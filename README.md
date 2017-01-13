@@ -39,3 +39,12 @@ Found a real bug? Raise an [issue](https://github.com/gatling/gatling/issues?sor
 
 [![eBusiness Information](https://github.com/gatling/gatling/wiki/img/ebi_logo.png)](https://github.com/gatling/gatling/wiki/Sponsors)&nbsp;&nbsp;&nbsp;&nbsp;
 [![Highsoft AS](https://github.com/gatling/gatling/wiki/img/highsoft_logo.png)](https://github.com/gatling/gatling/wiki/Sponsors)&nbsp;&nbsp;&nbsp;&nbsp;
+
+==========
+EXTRA
+==========
+0. 打包完项目部署在 /opt 目录下
+1. 增加静态服务器模块展示压测结果
+
+TODO 修改执行器代码
+
