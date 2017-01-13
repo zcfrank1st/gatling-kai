@@ -51,7 +51,7 @@ COMPILATION_CLASSPATH=`find "$GATLING_HOME/lib" -maxdepth 1 -name "*.jar" -type 
 "$JAVA" $COMPILER_OPTS -cp "$COMPILER_CLASSPATH" io.gatling.compiler.ZincCompiler -ccp "$COMPILATION_CLASSPATH" "$@"  2> /dev/null
 
 # Run the static server
-"$JAVA" -cp "$GATLING_CLASSPATH" io.gatling.static.server.Main
+nohup "$JAVA" -cp "$GATLING_CLASSPATH" io.gatling.static.server.Main > /dev/null 2>&1 &
 
 # Run Gatling
 "$JAVA" $DEFAULT_JAVA_OPTS $JAVA_OPTS -cp "$GATLING_CLASSPATH" io.gatling.app.Gatling "$@"
