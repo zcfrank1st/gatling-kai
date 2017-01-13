@@ -15,7 +15,7 @@ import sbt._
 lazy val root = Project("gatling-parent", file("."))
   .enablePlugins(SonatypeReleasePlugin)
   .dependsOn(Seq(commons, core, http, jms, jdbc, redis).map(_ % "compile->compile;test->test"): _*)
-  .aggregate(commons, core, jdbc, redis, http, jms, charts, metrics, app, recorder, testFramework, bundle, compiler)
+  .aggregate(commons, core, jdbc, redis, http, jms, charts, metrics, app, recorder, testFramework, bundle, compiler, staticServer)
   .settings(basicSettings: _*)
   .settings(noArtifactToPublish)
   .settings(docSettings(benchmarks, bundle): _*)
