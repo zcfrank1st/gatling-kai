@@ -92,4 +92,8 @@ object Dependencies {
   val testFrameworkDependencies = Seq(testInterface)
 
   val docDependencies = Seq(ffmq)
+
+  val staticServerDependencies = Seq(
+    "com.typesafe.akka" %% "akka-http" % "10.0.1"
+  )
 }

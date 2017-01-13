@@ -75,7 +75,12 @@ class RunResultProcessor(configuration: GatlingConfiguration) {
     println("Generating reports...")
     val indexFile = new ReportsGenerator().generateFor(reportsGenerationInputs)
     println(s"Reports generated in ${(nowMillis - start) / 1000}s.")
-    println(s"Please open the following file: ${indexFile.toFile}")
+
+    val resultPath = indexFile.toFile.toString
+    val absolutePathArray = resultPath.split("\\/")
+    println(s"Please open the following file: $resultPath")
+    // add static http server support
+    println(s"Or visit http://[ip-address]:9889/${absolutePathArray(absolutePathArray.length - 2)}/${absolutePathArray(absolutePathArray.length - 1)}")
   }
 
   private def runStatus(assertionResults: List[AssertionResult]): StatusCode = {

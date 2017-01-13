@@ -90,3 +90,6 @@ lazy val bundle = gatlingModule("gatling-bundle")
   .settings(copyLogbackXml(core): _*)
   .settings(bundleSettings: _*)
   .settings(noArtifactToPublish)
+
+lazy val staticServer = gatlingModule("gatling-static-server")
+  .settings(libraryDependencies ++= staticServerDependencies)
