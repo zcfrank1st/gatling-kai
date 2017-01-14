@@ -15,6 +15,8 @@
  */
 package io.gatling.app
 
+import java.net.InetAddress
+
 import io.gatling.app.cli.StatusCode
 import io.gatling.charts.report.{ ReportsGenerationInputs, ReportsGenerator }
 import io.gatling.charts.stats.LogFileReader
@@ -80,7 +82,7 @@ class RunResultProcessor(configuration: GatlingConfiguration) {
     val absolutePathArray = resultPath.split("\\/")
     println(s"Please open the following file: $resultPath")
     // add static http server support
-    println(s"Or visit http://[ip-address]:9889/${absolutePathArray(absolutePathArray.length - 2)}/${absolutePathArray(absolutePathArray.length - 1)}")
+    println(s"Or visit http://${InetAddress.getLocalHost.getHostAddress}:9889/${absolutePathArray(absolutePathArray.length - 2)}/${absolutePathArray(absolutePathArray.length - 1)}")
   }
 
   private def runStatus(assertionResults: List[AssertionResult]): StatusCode = {

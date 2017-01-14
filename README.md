@@ -43,10 +43,5 @@ Found a real bug? Raise an [issue](https://github.com/gatling/gatling/issues?sor
 ==========
 EXTRA
 ==========
-0. 打包完项目部署在 /opt 目录下
-1. 增加静态服务器模块展示压测结果
-
-TODO 修改执行器代码
-
-PROVE 将静态服务器的配置文件打到执行项目外
+1. 增加静态服务器模块展示压测结果 (sh bin/gatling.sh 启动)
 

@@ -22,7 +22,7 @@ import akka.stream.ActorMaterializer
 /**
  * Created by zcfrank1st on 13/01/2017.
  */
-object Main extends ConfigModule {
+object Main {
   def main(args: Array[String]): Unit = {
     implicit val system = ActorSystem("gatling-static-server")
     implicit val materializer = ActorMaterializer()
@@ -30,7 +30,7 @@ object Main extends ConfigModule {
 
     val route =
       pathPrefix("") {
-        getFromDirectory(conf.getString("static.server.resource"))
+        getFromDirectory(s"${System.getProperty("user.dir")}/results")
       }
 
     Http().bindAndHandle(route, "0.0.0.0", 9889)
