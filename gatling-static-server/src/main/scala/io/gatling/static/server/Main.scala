@@ -30,7 +30,7 @@ object Main {
 
     val route =
       pathPrefix("") {
-        getFromDirectory(s"${System.getProperty("user.dir")}/results")
+        getFromBrowseableDirectory(s"${System.getProperty("user.dir")}/results")
       }
 
     Http().bindAndHandle(route, "0.0.0.0", 9889)
